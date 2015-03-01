@@ -551,11 +551,11 @@ namespace MetroFramework.Forms
                     switch (sc)
                     {
                         case (int)WinApi.Messages.SC_MOVE: 
-                            if (!Movable) return;
+                            if (!Movable) return; 
                             break;
                         case (int)WinApi.Messages.SC_MAXIMIZE: 
                             break;
-                        case (int)WinApi.Messages.SC_RESTORE: 
+                        case (int)WinApi.Messages.SC_RESTORE:
                             break;
                     }
                     break;
@@ -564,6 +564,7 @@ namespace MetroFramework.Forms
                 case (int)WinApi.Messages.WM_LBUTTONDBLCLK:
                     if (!MaximizeBox) return;
                     break;
+                    
                 case (int)WinApi.Messages.WM_NCHITTEST:
                     WinApi.HitTest ht = HitTestNCA(m.HWnd, m.WParam, m.LParam);
                     if (ht != WinApi.HitTest.HTCLIENT)
