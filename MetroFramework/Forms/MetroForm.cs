@@ -551,9 +551,9 @@ namespace MetroFramework.Forms
                     switch (sc)
                     {
                         case (int)WinApi.Messages.SC_MOVE: 
-                            if (!Movable) return; 
+                            if (!Movable) return;
                             break;
-                        case (int)WinApi.Messages.SC_MAXIMIZE: 
+                        case (int)WinApi.Messages.SC_MAXIMIZE:
                             break;
                         case (int)WinApi.Messages.SC_RESTORE:
                             break;
@@ -564,7 +564,6 @@ namespace MetroFramework.Forms
                 case (int)WinApi.Messages.WM_LBUTTONDBLCLK:
                     if (!MaximizeBox) return;
                     break;
-
                 case (int)WinApi.Messages.WM_NCHITTEST:
                     WinApi.HitTest ht = HitTestNCA(m.HWnd, m.WParam, m.LParam);
                     if (ht != WinApi.HitTest.HTCLIENT)
@@ -584,6 +583,13 @@ namespace MetroFramework.Forms
             {
                 case (int)WinApi.Messages.WM_GETMINMAXINFO:
                     OnGetMinMaxInfo(m.HWnd, m.LParam);
+                    break;
+                case (int)WinApi.Messages.WM_SIZE:
+                    MetroFormButton btn;
+                    windowButtonList.TryGetValue(WindowButtons.Maximize, out btn);
+                    if (WindowState == FormWindowState.Normal) shadowForm.Visible = true;btn.Text = "1";
+                    if(WindowState== FormWindowState.Maximized)  btn.Text = "2";
+                    
                     break;
             }
         }
