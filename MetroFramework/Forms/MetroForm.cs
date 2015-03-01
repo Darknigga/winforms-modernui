@@ -564,7 +564,7 @@ namespace MetroFramework.Forms
                 case (int)WinApi.Messages.WM_LBUTTONDBLCLK:
                     if (!MaximizeBox) return;
                     break;
-                    
+
                 case (int)WinApi.Messages.WM_NCHITTEST:
                     WinApi.HitTest ht = HitTestNCA(m.HWnd, m.WParam, m.LParam);
                     if (ht != WinApi.HitTest.HTCLIENT)
