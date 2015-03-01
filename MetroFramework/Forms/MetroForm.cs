@@ -553,9 +553,9 @@ namespace MetroFramework.Forms
                         case (int)WinApi.Messages.SC_MOVE: 
                             if (!Movable) return;
                             break;
-                        case (int)WinApi.Messages.SC_MAXIMIZE:
+                        case (int)WinApi.Messages.SC_MAXIMIZE: 
                             break;
-                        case (int)WinApi.Messages.SC_RESTORE:
+                        case (int)WinApi.Messages.SC_RESTORE: 
                             break;
                     }
                     break;
